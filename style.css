@@ -1,0 +1,318 @@
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+/* ================= LAYOUT ================= */
+
+body {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    width: 270px;
+    background: linear-gradient(180deg, #0f172a, #111827);
+    color: white;
+    padding: 35px 25px;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 15px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: 0.3s ease;
+    font-weight: 500;
+}
+
+.sidebar li:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+/* ================= MAIN ================= */
+
+.main {
+    flex: 1;
+    padding: 45px;
+}
+
+/* ================= TÍTULOS ================= */
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 35px;
+    font-weight: 600;
+}
+
+/* ================= DASHBOARD ================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 28px;
+    border-radius: 22px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+}
+
+.card p {
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: 12px;
+}
+
+/* Destaque total geral */
+
+.card.destaque {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+.card.destaque p {
+    color: white;
+}
+
+/* Ativos */
+
+.card.ativo {
+    border-left: 6px solid #22c55e;
+}
+
+.card.ativo p {
+    color: #16a34a;
+}
+
+/* Inativos */
+
+.card.inativo-card {
+    border-left: 6px solid #ef4444;
+}
+
+.card.inativo-card p {
+    color: #dc2626;
+}
+
+/* Percentual */
+
+.card.percentual {
+    border-left: 6px solid #0ea5a4;
+}
+
+.card.percentual p {
+    color: #0ea5a4;
+}
+
+/* ================= FORM ================= */
+
+form {
+    background: white;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-bottom: 45px;
+}
+
+form input,
+form select {
+    padding: 15px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+form input:focus,
+form select:focus {
+    border-color: #0ea5a4;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(14,165,164,0.15);
+}
+.linha-nome-foto {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+}
+#campoEspecialidade {
+    grid-column: 1 / -1;
+}
+.btn-file {
+    background: #e2e8f0;
+    padding: 15px 20px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+.btn-file:hover {
+    background: #cbd5e1;
+}
+form button {
+    grid-column: 1 / -1;
+    padding: 18px;
+    border-radius: 16px;
+    border: none;
+    background: linear-gradient(90deg, #0ea5a4, #14b8a6);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(14,165,164,0.35);
+}
+.lista-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.prof-card {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    transition: 0.3s ease;
+}
+.prof-card:hover {
+    transform: translateY(-5px);
+}
+.foto-profissional {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #0ea5a4;
+    flex-shrink: 0;
+}
+.prof-card .info {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 25px;
+}
+.prof-card h3 {
+    grid-column: 1 / -1;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+}
+.prof-card p {
+    font-size: 13px;
+    color: #475569;
+}
+.acoes-card {
+    display: flex;
+    gap: 10px;
+}
+.acoes-card button {
+    background: #f1f5f9;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.acoes-card button:hover {
+    background: #0ea5a4;
+    color: white;
+}
+.prof-card.inativo {
+    opacity: 0.55;
+    filter: grayscale(20%);
+}
+.paginacao {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.paginacao button {
+    padding: 12px 20px;
+    border-radius: 14px;
+    border: none;
+    background: #0ea5a4;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.paginacao button:hover {
+    transform: translateY(-2px);
+}
+.paginacao button:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+}
+@media (max-width: 1000px) {
+    body {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        text-align: center;
+    }
+    form {
+        grid-template-columns: 1fr;
+    }
+    .prof-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .prof-card .info {
+        grid-template-columns: 1fr;
+    }
+    .acoes-card {
+        margin-top: 15px;
+    }
+
+}
